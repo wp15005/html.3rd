@@ -15,24 +15,24 @@ div#container	{
 }
 
 /* ヘッダー */
-header	{
+header#pageheader	{
 	background-color: #017acd;
 	background-image: url(sky.jpg);
 	padding: 28px 20px 150px
 }
 
-header h1	{
+header#pageheader h1	{
 	margin: 0
 	}
 
-header p	{
+header#pageheader p	{
 	color: #ffffff;
 	font-size: 0.75em;
 	margin: 0
 }
 
 /* パンくずリスト */
-p#bread	{
+nav#bread	{
 	font-size: 0.75em;
 	margin-top: 3px;
 	margin-bottom: 30px
@@ -47,7 +47,7 @@ article	{
 	margin-bottom: 25px
 }
 
-article h1	{
+article header > h1	{
 	background-color: #014471;
 	background-image: url(bar-blue.png);
 	background-repeat: no-repeat;
@@ -59,12 +59,12 @@ article h1	{
 	margin-bottom: 0
 }
 
-section h1	{
+article section h1	{
 	background-color: #e0e0e0;
 	background-image: url(bar-green.png);
 	background-repeat: no-repeat;
 	font-size: 0.875em;
-	color: #000000;
+	/*color: #000000;*/
 	line-height: 23px;
 	padding-left: 30px;
 	margin-top: 30px;
@@ -86,7 +86,7 @@ div#sidebar	{
 	/*margin-right: 15px*/
 }
 
-nav	ul{
+div#sidebar nav	ul{
 	font-size: 0.75em;
 	margin-top: 0;
 	margin-left: 0;
@@ -94,11 +94,11 @@ nav	ul{
 	line-height: 0
 }
 
-nav li	{
+div#sidebar nav li	{
 	list-style-type: none
 }
 
-nav li a	{
+div#sidebar nav li a	{
 	display: block;
 	line-height: 30px;
 	text-decoration: none;
@@ -108,22 +108,27 @@ nav li a	{
 	padding-left: 10px
 }
 
-nav li a:hover	{
+div#sidebar nav li a:hover	{
 	background-color: #017acd
 }
 
-div#sidebar aside	{margin-bottom: 10px}
+div#sidebar aside	{
+	margin-bottom: 10px
+}
 
-div#sidebar aside a	{font-size: 0.75em;
+div#sidebar aside a	{
+	font-size: 0.75em;
 	color: #444444;
 	text-decoration: none;
 	line-height: 30px;
 	border: solid 1px #888888;
-	padding: 5px}
+	padding: 5px
+}
 
-div#sidebar aside img	{border: none;
-	vertical-align: middle}
-
+div#sidebar aside img	{
+	border: none;
+	vertical-align: middle
+}
 
 /* フッター */
 footer	{
@@ -155,24 +160,26 @@ small{
 <div id="container">
 
 <!-- ヘッダー -->
-<header>
+<header id="pageheader">
 <h1><img src="logo.gif" alt="Green Leaf" /></h1>
 <p>生活を楽しくする情報をもっと身近にお届けします</p>
 </header>
 
 <!-- パンくずリスト -->
-<p id="bread">
+<nav id="bread">
 <a href="link.html">トップページ</a> &gt;
 <a href="link.html">サービス案内</a>
-</p>
+</nav>
 
 <!-- コンテンツ -->
-<article>
+<article itemscope itemtype="http://schema.org/Article">
+<header id="postheader">
+<h1 itemprop="name">サービス案内</h1>
 
-<h1>サービス案内</h1>
+<p itemprop="description">Green Leafは生活を楽しくするサービスを、もっと身近にお届けするために活動している企業グループです。情報サイトやショッピングサイトを通じてさまざまなサービスの提供を行い、みなさまをサポートいたします。</p>
+</header>
 
-<p>Green Leafは生活を楽しくするサービスを、もっと身近にお届けするために活動している企業グループです。情報サイトやショッピングサイトを通じてさまざまなサービスの提供を行い、みなさまをサポートいたします。</p>
-
+<div itemprop="articleBody">
 <section>
 <h1>情報サイト「Green Leaf」</h1>
 
@@ -188,6 +195,7 @@ small{
 
 <p>そのほかにも、ショップ内のToy Boxコーナーではヨーロッパやアフリカの遊び心にあふれる玩具を、Candy Boxコーナーではカラフルでおいしいお菓子をたくさん扱っています。また、地域ごとの地場産野菜の宅配も承っておりますので、ぜひご利用ください。</p>
 </section>
+</div>
 
 </article>
 
